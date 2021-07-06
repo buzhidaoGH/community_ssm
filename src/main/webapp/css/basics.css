@@ -1,0 +1,149 @@
+.basics {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 9px;
+}
+
+.ellipsis{
+    display:block;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    width: 20em;
+}
+
+.basics .basics_active_news h3 {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: solid 3px #1089FF;
+    padding-left: 15px;
+}
+
+.basics .basics_active_news {
+    margin-top: 20px;
+    height: 300px;
+}
+
+.basics .basics_active_news .active_left {
+    border: solid 2px #F0F0F0;
+    width: 550px;
+    float: left;
+    height: 300px;
+}
+
+.basics .basics_active_news .news_right {
+    border: solid 2px #F0F0F0;
+    width: 550px;
+    float: right;
+    height: 300px;
+}
+
+.basics .basics_active_news ul > li:nth-child(-n+3) a {
+    position: relative;
+}
+
+.basics .basics_active_news ul > li a {
+    color: #000;
+    font-family: 楷体;
+    font-size: 16px;
+}
+
+.basics .basics_active_news ul > li a:hover {
+    color: #008000;
+}
+
+.basics .basics_active_news ul > li span {
+    font-family: 楷体;
+    font-size: 16px;
+    float: right;
+}
+
+.basics .basics_active_news ul > li {
+    height: 41px;
+    line-height: 41px;
+    width: 95%;
+    margin-left: 15px;
+    margin-right: 5px;
+    border-bottom: 1px dotted #ccc;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    text-overflow: ellipsis;
+}
+
+.basics .basics_active_news ul > li:hover {
+    background-color: #E7E7E7;
+}
+
+.basics .basics_active_news ul > li:nth-child(-n+3) a::before {
+    content: "";
+    height: 13px;
+    width: 35px;
+    background: url("../images/new.gif") no-repeat;
+    position: absolute;
+    display: block;
+    right: -35px;
+    top: 4px;
+}
+
+.basics .basics_active_news ul {
+    list-style-type: none;
+}
+
+.basics .basics_list {
+    border: solid 2px #F0F0F0;
+    margin-top: 30px;
+    height: 250px;
+}
+
+.basics .basics_list h3 {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: solid 3px #1089FF;
+    padding-left: 15px;
+}
+
+.basics .basics_list .basics_list_auto {
+    background: #FFF;
+    overflow: hidden;
+    /*border: 1px dashed #CCC;*/
+    width: 100%;
+    margin: 0 auto;
+}
+
+.basics .basics_list .basics_list_auto a {
+    position: relative;
+}
+
+.basics .basics_list .basics_list_auto img {
+    border: 2px solid #F2F2F2;
+    height: 170px;
+    margin-left: 15px;
+    margin-top: 5px;
+    margin-right: 15px;
+}
+
+.basics .basics_list .basics_list_auto span {
+    position: absolute;
+    width: 120px;
+    text-align: center;
+    z-index: 22;
+    left: 30px;
+    top: 18px;
+    color: #363336;
+}
+
+.basics .basics_list_auto #indemo {
+    float: left;
+    width: 800%;
+}
+
+.basics .basics_list_auto #demo1 {
+    float: left;
+    height: 205px;
+}
+
+.basics .basics_list_auto #demo2 {
+    float: left;
+    height: 205px;
+}

@@ -1,0 +1,16 @@
+.index_left{
+    width: 18%;
+    margin-right: 10px;
+    margin-top: 20px;
+    float: left;
+    text-align: center;
+    font-size: 30px;
+    font-family: 黑体;
+}
+
+.news_now{
+    padding-top: 100px;
+    height: 30px;
+    font-size: 20px;
+    clear:both;
+}

@@ -1,0 +1,113 @@
+.news_list {
+    width: 100%;
+    height: 603px;
+}
+
+.news_list .news_list_search {
+    height: 70px;
+    line-height: 70px;
+}
+
+.news_list .news_list_search span {
+    font-size: 20px;
+    font-weight: bold;
+    color: #3F3F3F;
+}
+
+.news_list .news_list_search #news_title {
+    height: 35px;
+    font-size: 18px;
+    text-indent: 10px;
+}
+
+.news_list .news_list_search #news_search {
+    background-color: #2C76BB;
+    color: #FFFFFF;
+    height: 37px;
+    width: 70px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-family: 黑体;
+}
+
+.news_list .news_list_search #news_search:active {
+    color: #FC1944;
+}
+
+
+.news_list .news_list_list {
+    border: 2px solid #E2E2E2;
+}
+
+.news_list .news_list_list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.news_list .news_list_list table tr {
+    height: 60px;
+    line-height: 60px;
+    width: 100%;
+    border-bottom: 2px solid #E2E2E2;
+}
+
+.news_list .news_list_list table tr:nth-child(odd) {
+    background-color: #DBE5F1;
+}
+
+.news_list .news_list_list table tr th:first-child, td:first-child {
+    text-indent: 10px;
+}
+
+.news_list .news_list_list table tr th, td {
+    font-size: 20px;
+    text-align: left;
+}
+
+.news_list .news_list_list table tr td {
+    font-family: 仿宋;
+    font-size: 18px;
+
+}
+.news_list .news_list_list table tr td a{
+    color: #0000EE;
+    font-weight: bold;
+}
+.news_list .news_list_list table tr td a:hover{
+    color: #4CAF50;;
+}
+
+
+
+.news_list .news_list_page {
+    margin-top: 10px;
+}
+
+.news_list .news_list_page ul {
+    display: inline-block;
+}
+
+.news_list .news_list_page ul li {
+    display: inline;
+}
+
+.news_list .news_list_page .pagination li a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.pagination_news {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+}
+
+.news_list .news_list_page ul li a:hover:not(.pagination_news) {
+    background-color: #ddd;
+}

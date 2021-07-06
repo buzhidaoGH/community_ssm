@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!--spring的注解文件:也是spring整合mvc;spring整合mybatis的中转站-->
+
+    <!--开启注解扫描,只希望处理service和dao-->
+    <context:component-scan base-package="com.community">
+        <!--配置哪些注解不扫描-->
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+    <!--spring整合mybatis框架-->
+    <!--配置连接池 C3P0的连接池-->
+    <bean id="comboPooledDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="com.mysql.jdbc.Driver"/>
+        <property name="jdbcUrl" value="jdbc:mysql:///community"/>
+        <property name="user" value="root"/>
+        <property name="password" value="root"/>
+    </bean>
+
+    <!--配置SqlSessionFactory工厂,Spring提供的工厂类(整合了Mybatis的那个工厂,extends) 交给IOC管理-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="comboPooledDataSource"/>
+        <property name="plugins">
+            <array>
+                <!--传入插件对象-->
+                <bean class="com.github.pagehelper.PageInterceptor">
+                    <property name="properties">
+                        <props>
+                            <prop key="helperDialect">mysql</prop>
+                            <prop key="reasonable">true</prop>
+                        </props>
+                    </property>
+                </bean>
+            </array>
+        </property>
+    </bean>
+
+    <!--配置接口所在的包;工厂对哪些包进行创建代理;映射扫描-->
+    <bean id="mapperScanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.community.dao" />
+    </bean>
+
+    <!--配置Spring框架声明式事务管理;本质上就是一个动态代理
+    是Spring整合了Mybatis的事务管理(extends)
+    整合了JDBCTemplate的模板
+    -->
+    <!--配置事务管理-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="comboPooledDataSource"/>
+    </bean>
+
+    <!--配置事务通知-->
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <!--表示find方法开头的所有方法,read-only:true 只读 -->
+            <tx:method name="find*" read-only="true"/>
+
+            <!--表示save方法开头的所有方法 默认自动提交事务-->
+            <tx:method name="save*" isolation="DEFAULT"/>
+
+            <!--表示除了上面所有的方法都进行增强-->
+            <tx:method name="*" isolation="DEFAULT"/>
+        </tx:attributes>
+    </tx:advice>
+
+    <!--配置AOP的增强:妥妥的代理,可以帮忙释放资源等等等等的范围-->
+    <aop:config>
+        <!--advice-ref引用的事务,pointcut切入点(具体代理哪些)-->
+        <aop:advisor advice-ref="txAdvice" pointcut="execution(* com.community.service.impl.*ServiceImpl.*(..))"/>
+    </aop:config>
+
+    
+</beans>

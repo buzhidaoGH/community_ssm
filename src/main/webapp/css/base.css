@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.head .head-top {
+    width: 100%;
+    background-color: #303643;
+}
+
+.head .head-top .head-top-wrap {
+    width: 1200px;
+    margin: 0 auto;
+    height: 34px;
+    font-size: 14px;
+    font-family: SimSun-ExtB;
+    color: #fff;
+}
+
+.head .head-top .head-top-wrap {
+    display: block;
+    line-height: 34px;
+}
+
+.head .head-top .notice {
+    width: 300px;
+    height: 34px;
+    float: right;
+    margin-right: 300px;
+}
+
+.head .head-top .top-link {
+    width: 150px;
+    height: 34px;
+    line-height: 34px;
+    float: right;
+    text-align: center;
+}
+
+.head .head-top .top-link a {
+    color: #fff;
+}
+
+.head .head-top .top-link a div {
+    display: none;
+}
+
+#qq_QRcode, #wx_QRcode {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    z-index: 22;
+    border: 1px solid green;
+}
+
+.head .head-top .top-link a:hover div {
+    display: block;
+}
+
+.head .head-wrap {
+    width: 1200px;
+    margin: 0 auto;
+    height: 80px;
+}
+
+.head .head-wrap .head-wrap-left {
+    float: left;
+    height: 80px;
+}
+
+.head .head-wrap .head-wrap-right {
+    float: right;
+    height: 80px;
+    width: 200px;
+    text-align: center;
+    line-height: 70px;
+}
+
+.head .head-wrap .head-wrap-right a {
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.head .head-wrap .head-wrap-right a:hover {
+    color: #1289FF;
+}
+
+.nav {
+    width: 100%;
+    background-color: #303643;
+    height: 60px;
+}
+
+.nav .navigation {
+    background-color: #303643;
+    width: 1200px;
+    height: 60px;
+    margin: 0 auto;
+}
+
+.nav .navigation ul {
+    height: 60px;
+    width: 100%;
+    list-style-type: none;
+}
+
+.nav .navigation ul > li {
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.nav .navigation ul > li:hover{
+    background-color: #6307FE;
+    border-bottom: 3px solid #FE7300;
+}
+
+.nav .navigation ul > li > a {
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.nav .navigation_active {
+    background-color: #6307FE;
+    border-bottom: 3px solid #FE7300;
+}
+
+.content {
+    width: 100%;
+/*    height: 800px;*/
+    margin-top: 10px;
+}
+
+.content .loading {
+    margin: 0 auto;
+    width: 1200px;
+    height: 100%;
+    /*background-color: pink;*/
+}
+
+.foot {
+    width: 100%;
+    background-color: #383838;
+    height: 120px;
+    margin-top: 30px;
+}
+
+.foot .foot_wrap {
+    margin: 0 auto;
+    width: 1200px;
+    height: 100%;
+}
+
+.foot_wrap .wrap_left{
+    width: 400px;
+    float: left;
+    height: 100%;
+}
+.foot_wrap .wrap_left a{
+    color: #E0E0E0;
+    font-size: 14px;
+    font-family: SimSun-ExtB;
+    height: 20px;
+    margin-left: 15px;
+}
+.foot_wrap .wrap_left a:hover{
+    color: #95BEFD;
+    font-size: 16px;
+}
+
+
+.foot_wrap .wrap_right{
+    float: right;
+    width: 400px;
+    height: 100%;
+}
+.foot_wrap .wrap_logo{
+    float: left;
+    height: 110px;
+    width: 300px;
+    margin-top: 10px;
+}
+.foot_wrap .wrap_right p{
+    color: #EEEEEE;
+    font-size: 14px;
+    margin-top: 8px;
+}

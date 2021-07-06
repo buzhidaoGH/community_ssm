@@ -1,0 +1,65 @@
+.context_right .user_search {
+    font-size: 20px;
+}
+.context_right .user_search input{
+    width:180px;
+    height:30px;
+    font-size: 18px;
+    text-indent:5px;
+}
+
+.context_right .user_search button{
+    width: 60px;
+    height: 30px;
+    font-size: 18px;
+
+}
+
+.context_right .user_list {
+    width: 100%;
+}
+
+.context_right .user_list table {
+    width: 100%;
+    border-top: 1px solid #999;
+    border-left: 1px solid #999;
+    border-spacing: 0; /*去掉单元格间隙*/
+}
+
+.context_right .user_list table td {
+    padding: 10px 30px;
+    border-bottom: 1px solid #999;
+    border-right: 1px solid #999;
+}
+
+
+.user_list_page {
+    margin-top: 10px;
+}
+
+.user_list_page ul {
+    display: inline-block;
+}
+
+.user_list_page ul li {
+    display: inline;
+}
+
+.user_list_page .pagination li a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.pagination_active {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+}
+
+.user_list_page ul li a:hover:not(.pagination_active) {
+    background-color: #ddd;
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--开启注解扫描,只扫描Controller注解-->
+    <context:component-scan base-package="com.community">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+    <!--配置视图解析器:用来确定方法的返回值跳转等-->
+    <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!--解析的前文件夹-->
+        <property name="prefix" value="/pages/"/>
+        <!--解析的后缀-->
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!--配置文件解析器-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="10485760"/>
+    </bean>
+
+    <!--过滤静态资源JS/CSS/images:表示可以直接访问
+    不要通过视图解析器才能访问-->
+    <mvc:resources mapping="/css/**" location="/css/"/>
+    <mvc:resources mapping="/images/**" location="/images/"/>
+    <mvc:resources mapping="/js/**" location="/js/"/>
+    <mvc:resources mapping="/pages/**" location="/pages/"/>
+    <mvc:resources mapping="/grouppictures/**" location="/grouppictures/"/>
+    <mvc:resources mapping="/userpictures/**" location="/userpictures/"/>
+    <mvc:resources mapping="/activityImages/**" location="/activityImages/"/>
+
+    <!--开启SpringMVC注解支持-->
+    <mvc:annotation-driven/>
+    <!--可以支持AOP注解的支持(也就是事务注解)-->
+    <!--<aop:aspectj-autoproxy proxy-target-class="true"/>-->
+</beans>
