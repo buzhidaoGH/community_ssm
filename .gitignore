@@ -15,6 +15,7 @@
 # Package Files #
 *.jar
 *.war
+!community_ssm.war
 *.nar
 *.ear
 *.zip
